@@ -84,7 +84,43 @@ class singlyLinkedlist
         this.tail.next=null
 
         this.length=this.length-1
+
+        if(this.length==0)
+        {
+            this.head=null
+            this.tail=null
+        }
     }
+
+    pop1()
+    {
+        if(!this.head) return undefined
+
+        var curr=this.head;
+        var newtail=curr
+
+        while(current.next)
+        {
+            newtail=current
+            current=current.next
+        }
+
+        this.tail=newtail
+        this.tail.next=null
+
+        this.length=this.length-1
+
+        if(this.length)
+        {
+            this.head=null;
+            this.tail=null;
+
+        }
+
+    }
+    // here pop1 is more professional solution and pop() is my logic
+
+
 
     traverse()
     {
@@ -108,6 +144,7 @@ function display(lis)
         console.log(temp.val)
         temp=temp.next;
     }
+    
 }
 
 
@@ -136,5 +173,4 @@ console.log()
 console.log("traverse of the list:")
 list.traverse();
 // this is an method inside the class
-
 
