@@ -136,6 +136,37 @@ class linkedlist{
         }
     }
 
+    insertion(index,val)
+    {
+        if(index==0)
+        {
+            this.unshift(val)
+            return true;
+        }
+        else if(index>this.length && index <0)
+        {
+            return false;
+        }
+        else{
+            if(index==this.length)
+            {
+                this.push(val)
+            }
+            else{
+                let temp=this.get(index-1)
+                let curr=new node(val)
+                curr.next=temp.next;
+                temp.next=curr
+
+                
+
+            }
+            return true;
+        }
+    }
+
+    
+
 
 }
 
@@ -158,5 +189,8 @@ lis.set(3,5)
 console.log("\n")
 lis.traverse();
 
+// it is the new perspective or method for inserting in the linked list
 
+lis.insertion(2,10)
 
+lis.traverse()
